@@ -140,7 +140,7 @@ $(document).ready(function() {
         var dept = $(this).val();
         
         if (deptArray.indexOf(dept) != -1) {
-            var deptCheckbox = $('<div class="dept-checkbox">' + '<input type="checkbox" id="' + dept + '"name="[0][]">');
+            var deptCheckbox = $('<div class="dept-checkbox">' + '<input type="checkbox" id="' + dept + '"name="user_dept[0][]">');
                 deptCheckbox.find('input').attr('value', dept).after('<label class="checkbox-label">' + dept + '</label></div>');
             $('.depts-checkbox-container').append(deptCheckbox).show();
 
@@ -151,8 +151,9 @@ $(document).ready(function() {
                 var parentId = parent[0].id;
                 var thisCheckbox = $(this).find('input');
 
-                if(thisCheckbox.attr('name') === '[0][]'){
-                    thisCheckbox.attr('name', '[' + parentId + '][]');
+                if(thisCheckbox.attr('name') === 'user_dept[0][]'){
+                    thisCheckbox.attr('name', 'user_dept[' + parentId + '][]');
+                    console.log('fire');
                 }
 
             });
