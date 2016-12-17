@@ -33,17 +33,19 @@ $(document).ready(function() {
 
         } else {
         
-        var newDept = $('<div class="dept-container"></div>').html($('#new-dept').html());
-        
-        $('.dept-section').append(newDept);
+            var newDept = $('<div class="dept-container"></div>').html($('#new-dept').html());
+            
+            $('.dept-section').append(newDept);
 
-        newDept.find('input').focus();
+            newDept.find('input').focus();
 
-    	return false;
+        	return false;
         
         }
-    	
-    	});
+
+        return false;
+                
+    });
 
     //check for empty dept one enter keyup
     $('input').on('keyup', function(e){
@@ -105,7 +107,6 @@ $(document).ready(function() {
             $('[id=' + originalValue + ']').each(function(){
                $(this).parent().remove(); 
             }); 
-                
         }
 
         $('.dept-empty-error').remove();
@@ -158,6 +159,8 @@ $(document).ready(function() {
 
             });
         }
+
+        return false;
 
     });
 
