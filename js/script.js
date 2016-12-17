@@ -180,7 +180,7 @@ $(document).ready(function() {
     	
     	$('#user-section').append(newUser);
         
-        newUser.find('input[type=checkbox]').attr('name', '[' + newUser.attr('id') + '][]');
+        newUser.find('input[type=checkbox]').attr('name', 'dept_name[' + newUser.attr('id') + '][]');
 
     	return false;
     });
